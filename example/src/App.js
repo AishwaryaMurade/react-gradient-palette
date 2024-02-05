@@ -1,10 +1,13 @@
 import React from 'react'
 
-import { ExampleComponent } from 'react-gradient-palette'
-import 'react-gradient-palette/dist/index.css'
+import {  GradientMaker } from 'react-gradient-palette'
+
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  const setGradient =(value)=>{
+document.getElementsByTagName('body')[0].style.backgroundImage = value
+  }
+  return (<GradientMaker  setGradient={setGradient} defaultGradient={['#ff5733', '#d147a3']} />)
 }
 
 export default App

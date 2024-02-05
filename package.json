@@ -49,5 +49,9 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "react-icons": "^5.0.1",
+    "tinycolor2": "^1.6.0"
+  }
 }
