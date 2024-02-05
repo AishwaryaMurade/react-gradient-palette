@@ -81,9 +81,9 @@ export const ColorPicker = ({ setColor,selectedColor }) => {
         textAlign: 'center',
         color: '#333',
         fontSize: '16px',
-        margin: '6px 0 15px 6px',
         background: '#eee',
-        width: 'calc(200px - 34px)',
+        width: '135px',
+        marginBottom: '10px',
         height: '25px',
         borderRadius: '6px',
         boxShadow: 'inset rgb(2 2 2 / 20%) 0 0 0 1px',
@@ -109,6 +109,13 @@ export const ColorPicker = ({ setColor,selectedColor }) => {
       rgbInput:{
         width: '45px',
     margin: '0'
+      },
+      hexDiv:{
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'column',
+        gap: '5px',
+        marginTop:'10px'
       }
     };
 
@@ -169,17 +176,20 @@ export const ColorPicker = ({ setColor,selectedColor }) => {
         field.appendChild(fieldOverlay);
 
         self.appendChild(field);
-
+        var hexDiv = document.createElement("div");
+        Object.assign(hexDiv.style, styles.hexDiv);
         var label = document.createElement("label");
         Object.assign(label.style, styles.label);
         label.textContent = "HEX";
-        self.appendChild(label);
+        hexDiv.appendChild(label);
 
         var input = document.createElement("input");
         Object.assign(input.style, styles.input);
 
         input.value = "#ffffff";
-        self.appendChild(input);
+        hexDiv.appendChild(input);
+        self.appendChild(hexDiv);
+
 
         var div = document.createElement("div");
         // div.classList.add(styles.rgbSection)
