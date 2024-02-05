@@ -1,6 +1,6 @@
 {
   "name": "react-gradient-palette",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Made with create-react-library",
   "author": "AishwaryaMurade",
   "license": "MIT",
@@ -11,6 +11,9 @@
   "engines": {
     "node": ">=10"
   },
+  "keywords": [
+    "gradient","react","colorpicker","react.js","tooleditor"
+  ],
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
