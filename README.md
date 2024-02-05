@@ -17,7 +17,7 @@ React Gradient Palette is a lightweight and customizable React library for gener
 - 📦 Easily integrate into your React projects
 
 ## Demo
-See the react-gradient-palette in action [here](https://htmlpreview.github.io/?https://github.com/AishwaryaMurade/react-gradient-palette-demo/blob/main/index.html/)
+See the react-gradient-palette in action [here](https://htmlpreview.github.io/?https://github.com/AishwaryaMurade/react-gradient-palette-demo/blob/main/index.html)
 
 <br />
 
