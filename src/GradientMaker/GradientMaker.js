@@ -7,7 +7,7 @@ import { HiPlusCircle } from "react-icons/hi";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
 
-export const GradientMaker = ({ setGradient, defaultGradient, showRadial,showConic,onCloseClick, showCloseBtn }) => {
+export const GradientMaker = ({ setGradient, defaultGradient, showRadial,showConic,onCloseClick, showCloseBtn, className }) => {
   const [activeTab, setActiveTab] = useState(1);
   var radialVal = showRadial ? showRadial : false
   var conicVal = showConic ? showConic : false
@@ -187,7 +187,7 @@ useEffect(()=>{
 
 
   return (
-    <div style={styles.tabscontainer}>
+    <div style={styles.tabscontainer} className={className ? className : 'pickerWrapper'}>
      {showCloseBtn && <div style={styles.closeContainer} onClick={onCloseClick}><span style={styles.closeContainericon}><RxCross2/></span></div>}
       <div style={styles.tabs}>
        {(radialVal || conicVal) && <div
