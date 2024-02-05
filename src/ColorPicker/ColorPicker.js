@@ -12,6 +12,8 @@ export const ColorPicker = ({ setColor,selectedColor }) => {
         background: '#fff',
         width: '195px',
         paddingLeft: '20px',
+        boxSizing: 'content-box'
+
       },
       hue: {
         width: '20px',

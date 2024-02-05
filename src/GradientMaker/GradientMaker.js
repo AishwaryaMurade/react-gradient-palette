@@ -32,9 +32,12 @@ export const GradientMaker = ({ setGradient, defaultGradient, showRadial,showCon
       borderRadius: '4px',
       padding: '0px 5px 5px 5px',
       boxShadow: '0 16px 32px -2px rgba(0, 0, 0, 0.3)',
+      boxSizing: 'content-box'
     },
     tabs: {
       display: 'flex',
+      width: '255px',
+      marginLeft: '-5px'
     },
     tab: {
       flex: '1',
@@ -42,7 +45,7 @@ export const GradientMaker = ({ setGradient, defaultGradient, showRadial,showCon
       padding: '8px',
       cursor: 'pointer',
       transition: 'background-color 0.3s ease',
-      fontWeight: '600',
+      fontWeight: '500',
       color:'#000'
     },
     tabHover: {
@@ -66,21 +69,20 @@ export const GradientMaker = ({ setGradient, defaultGradient, showRadial,showCon
     },
 
     inputSectionDiv: {
-      height: '25px',
-      width: '25px',
-      borderRadius: '6px',
-      cursor: 'pointer',
-      margin: '3px',
+      marginBottom: '-4px'
     },
     gradientSectionInputDiv: {
       display: 'flex',
       gap: '8px',
-      marginBottom: '8px',
+
       alignItems: 'end',
     },
     inputSection: {
       display: 'flex',
       justifyContent: 'space-between',
+    marginBottom: '5px',
+    height: '32px',
+    boxSizing: 'content-box'
     },
     inputSectionSpanSvg: {
       fontSize: '28px',
@@ -92,6 +94,7 @@ export const GradientMaker = ({ setGradient, defaultGradient, showRadial,showCon
       color: '#8B0000',
       cursor: 'pointer',
       fontSize: '25px',
+      paddingTop: '2px'
     },
     gradientSectionSvg: {
       fontSize: '25px',
@@ -124,7 +127,8 @@ export const GradientMaker = ({ setGradient, defaultGradient, showRadial,showCon
     color: '#fff',
     borderRadius: '14px',
     right: '-10px',
-    top: '-10px'
+    top: '-10px',
+    cursor:'pointer'
     },
     closeContainericon:{
       display:'flex',
@@ -220,12 +224,24 @@ useEffect(()=>{
           <div style={styles.gradientSection}>
 
             <div style={styles.inputSection} >
-              <div style={{...styles.gradientSectionInputDiv,...styles.inputSectionDiv}}>
+              <div style={{...styles.gradientSectionInputDiv,height: '25px',
+      width: '25px',
+      borderRadius: '6px',
+      cursor: 'pointer'}}>
               {colorOne.map((e,i)=>{
-                return (<div style={selectedInput===i+1 ? {...styles.inputSectionDiv,border:'2px solid '+e}:{}} key={i} >
-                <div  style={{ ...styles.inputSectionDiv,background: e }} onClick={()=>{setSelected(e);setSelectedInput(i+1)}}></div></div>)
+                return (<div style={selectedInput===i+1 ? {height: '25px',
+                width: '25px',
+                borderRadius: '6px',
+                cursor: 'pointer',border:'2px solid '+e}:{}} key={i} >
+                <div  style={selectedInput!==i+1 ? {height: '25px',
+                width: '25px',
+                borderRadius: '6px',
+                cursor: 'pointer',border:'2px solid '+e,background: e,...styles.inputSectionDiv}:{height: '25px',
+                width: '25px',
+                borderRadius: '6px',
+                cursor: 'pointer',border:'2px solid '+e,background: e, margin:'3px'}} onClick={()=>{setSelected(e);setSelectedInput(i+1)}}></div></div>)
               })}
-              {colorOne.length < 4 &&<span><HiPlusCircle  style={styles.inputSectionSpanSvg} onClick={()=> {setColorOne((current => [... current, '#000000'])); setTimeout(() => {
+              {colorOne.length < 4 &&<span><HiPlusCircle  style={{...styles.inputSectionSpanSvg,...styles.inputSectionDiv}} onClick={()=> {setColorOne((current => [... current, '#000000'])); setTimeout(() => {
                 setSelectedInput(colorOne.length+1)
                 setSelected('#000000')
               }, 50)
