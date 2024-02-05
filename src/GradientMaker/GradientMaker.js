@@ -43,6 +43,7 @@ export const GradientMaker = ({ setGradient, defaultGradient, showRadial,showCon
       cursor: 'pointer',
       transition: 'background-color 0.3s ease',
       fontWeight: '600',
+      color:'#000'
     },
     tabHover: {
       backgroundColor: '#f0f0f0',
@@ -63,19 +64,7 @@ export const GradientMaker = ({ setGradient, defaultGradient, showRadial,showCon
       textAlign: 'center',
       margin: '10px'
     },
-    // inputSectionInput: {
-    //   paddingRight: '50px',
-    //   borderRadius: '10px',
-    //   height: '35px',
-    //   padding: '0 10px',
-    //   fontSize: '14px',
-    //   transition: 'box-shadow .1s',
-    //   boxShadow: 'inset #d8d8da 0 0 0 1px, inset white 0 0 0 100px !important',
-    //   border: 'none',
-    //   width: '100%',
-    //   color: 'black !important',
-    //   fontFamily: '"Inter", sans-serif',
-    // },
+
     inputSectionDiv: {
       height: '25px',
       width: '25px',
@@ -197,7 +186,7 @@ useEffect(()=>{
     <div style={styles.tabscontainer}>
      {showCloseBtn && <div style={styles.closeContainer} onClick={onCloseClick}><span style={styles.closeContainericon}><RxCross2/></span></div>}
       <div style={styles.tabs}>
-       {radialVal && conicVal && <div
+       {radialVal || conicVal && <div
         onMouseEnter={() => setHovered(1)}
         onMouseDown={() => setHovered(false)}
         onMouseLeave={() => setHovered(false)}
