@@ -4,7 +4,7 @@ Certainly! A well-crafted README is essential for attracting users to your React
 
 # React Gradient Palette
 
-<!-- ![React Gradient Palette](https://your-image-url.com/gradient-generator-image.png) -->
+![React Gradient Palette](https://github.com/AishwaryaMurade/react-gradient-palette-demo/blob/main/demopic2.jpg?raw=true)
 
 React Gradient Palette is a lightweight and customizable React library for generating gradients effortlessly. It provides a simple and intuitive interface for users to create and select gradients.
 
