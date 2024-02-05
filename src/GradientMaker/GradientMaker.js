@@ -190,7 +190,7 @@ useEffect(()=>{
     <div style={styles.tabscontainer}>
      {showCloseBtn && <div style={styles.closeContainer} onClick={onCloseClick}><span style={styles.closeContainericon}><RxCross2/></span></div>}
       <div style={styles.tabs}>
-       {radialVal || conicVal && <div
+       {(radialVal || conicVal) && <div
         onMouseEnter={() => setHovered(1)}
         onMouseDown={() => setHovered(false)}
         onMouseLeave={() => setHovered(false)}
@@ -223,7 +223,7 @@ useEffect(()=>{
         {/* Content for Tab 1 */}
           <div style={styles.gradientSection}>
 
-            <div style={styles.inputSection} >
+            <div style={(!radialVal && !conicVal && showCloseBtn) ?{paddingTop:'15px',...styles.inputSection} :styles.inputSection} >
               <div style={{...styles.gradientSectionInputDiv,height: '25px',
       width: '25px',
       borderRadius: '6px',
